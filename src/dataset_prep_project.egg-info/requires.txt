@@ -1,0 +1,14 @@
+Cython
+argparse
+setuptools
+numpy==2.2.0
+pandas
+contourpy==1.3.2
+scipy==1.15.3
+geopandas
+shapely
+pyyaml
+seaborn
+matplotlib
+networkx
+momepy

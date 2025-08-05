@@ -1,0 +1,34 @@
+data_paths:
+  census_tracts:
+    rhode_island: 'tl_2022_44_tract.shp'
+    connecticut: 'tl_2022_09_tract.shp'
+    new_hampshire: 'tl_2022_33_tract.shp'
+    new_york: 'tl_2022_36_tract.shp'
+    vermont: 'tl_2022_50_tract.shp'
+    maine: 'tl_2022_23_tract.shp'
+    massachusetts: 'tl_2022_25_tract.shp'
+  circuits:
+    "CT_United": "CT_Combined File.shp"
+    "CT_Eversource": "CT_DG Hosting CT Final Cache.shp"
+    "MA_UnitMaOH": "MA_Primary OH Conductor.shp"
+    "MA_UnitMaUG": "MA_Primary UG Conductor.shp"
+    "MA_NatGrid3": "MA_NatGrid_sub3.shp"
+    "MA_WMA": "MA_Eversource_WMA.shp"
+    "MA_EMA": "MA_Eversource_EMA.shp"
+    "ME_CMP3": "ME_CMP_Hosting_Capacity_Phase3.shp"
+    "ME_CMP1": "ME_CMP_Hosting_Capacity_Phase12.shp"
+    "NH_Liberty1": "NH_Single_and_Dual_Phase_HCA_Sections_101823.shp"
+    "NH_Liberty3": "NH_Three_Phase_HCA_Sections_101823.shp"
+    "NH_Eversource": "NH_DG_Hosting_NH_Final_Cache.shp"
+    "NY_CenHud12": "NY_12 Phase.shp"
+    "NY_CenHud3": "NY_Winter 3 Phase.shp"
+    "NY_ConEd12": "NY_No Load Capacity for 1PH and 2PH Feeders.shp"
+    "NY_ConEd3": "NY_Hosting Capacity for 3PH Conductors.shp"
+    "NY_AvGriH": "NY_Hosting Capacity.shp"
+    "NY_AvGriNoH": "NY_Non-Hosting Capacity.shp"
+    "NY_NatGridHC": "NY_Local Feeder Level Hosting Capacity for PV.shp"
+    "NY_NatGridprimary": "NY_Primary Level Hosting Capacity.shp"
+    "NY_ORU1": "NY_No Hosting Capacity for 1PH and 2PH Segments.shp"
+    "NY_ORU3": "NY_Hosting Capacity for 3PH Segments.shp"
+    "RI": "RI_Combined File.shp"
+    "VT_GMP": "VT_GMP Distribution Circuits_OK.shp"
