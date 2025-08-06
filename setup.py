@@ -25,6 +25,7 @@ setup(
         "matplotlib",
         "networkx",
         "momepy",
+        "pyyaml"
     ],  # Dependencies (same as requirements.txt)
     classifiers=[
         "Programming Language :: Python :: 3",
