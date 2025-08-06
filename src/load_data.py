@@ -77,13 +77,19 @@ def extract_doi_from_url(url):
     return match.group(0)
 
 def list_files_in_dataverse_dataset(api_url):
+    """
+    Given a Dataverse API URL, return the list of files in the dataset.
+    Expects the API endpoint format:
+    https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:...
+    """
+    print(f"Querying Dataverse API: {api_url}")  # debug info
     response = requests.get(api_url)
     if response.status_code != 200:
-        raise Exception(f"Could not access dataset: {response.status_code}")
+        raise Exception(f"Could not access dataset: {response.status_code} - {response.text}")
     return response.json()["data"]
 
 def download_all_files_from_dataverse(dataset_url: str, output_dir: str = "data/raw"):
-    """Download all files from a Dataverse dataset URL to a local folder.
+    """Download all files from a Dataverse dataset API URL to a local folder.
        Automatically unzip ZIP files and delete them afterward."""
     os.makedirs(output_dir, exist_ok=True)
     files = list_files_in_dataverse_dataset(dataset_url)
