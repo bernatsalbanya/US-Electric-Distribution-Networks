@@ -69,19 +69,30 @@ def load_circuit_data():
 
     return circuits
 
-def list_files_in_dataverse_dataset(url):
-    """Get a list of all files in a Dataverse dataset given a DOI."""
-    response = requests.get(f"{url}/versions/latest/files")
+def extract_doi_from_url(url: str) -> str:
+    """Extract DOI from a Dataverse dataset URL."""
+    match = re.search(r"doi:10\.\d{4,9}/[-._;()/:A-Z0-9]+", url, re.IGNORECASE)
+    if not match:
+        raise ValueError("DOI not found in the provided URL.")
+    return match.group(0)
+
+def list_files_in_dataverse_dataset(dataset_url: str):
+    """List all files in a Dataverse dataset given its HTML page URL."""
+    doi = extract_doi_from_url(dataset_url)
+    api_url = "https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files"
+    params = {"persistentId": doi}
+    response = requests.get(api_url, params=params)
 
     if response.status_code != 200:
         raise Exception(f"Could not access dataset: {response.status_code}")
 
     return response.json()["data"]
 
-def download_all_files_from_dataverse(doi: str, output_dir: str = "data/raw"):
-    """Download all files from a Dataverse dataset to a local folder."""
+def download_all_files_from_dataverse(dataset_url: str, output_dir: str = "data/raw"):
+    """Download all files from a Dataverse dataset URL to a local folder.
+       Automatically unzip ZIP files and delete them afterward."""
     os.makedirs(output_dir, exist_ok=True)
-    files = list_files_in_dataverse_dataset(doi)
+    files = list_files_in_dataverse_dataset(dataset_url)
 
     for f in files:
         file_id = f["dataFile"]["id"]
@@ -105,11 +116,22 @@ def download_all_files_from_dataverse(doi: str, output_dir: str = "data/raw"):
 
         print(f"Downloaded: {filename}")
 
+        # If it's a ZIP, unzip and delete it
+        if filename.lower().endswith(".zip"):
+            unzip_file(output_path, output_dir)
+
 def unzip_file(zip_path: str, extract_to: str):
+    """Unzip a ZIP archive into a given directory and delete the original ZIP."""
     print(f"Unzipping {zip_path} to {extract_to}")
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to)
     print("Unzip complete.")
+
+    try:
+        os.remove(zip_path)
+        print(f"Deleted original ZIP file: {zip_path}")
+    except OSError as e:
+        print(f"Error deleting {zip_path}: {e}")
 
 
 if __name__ == "__main__":
