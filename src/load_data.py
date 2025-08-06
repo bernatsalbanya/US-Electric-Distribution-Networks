@@ -69,11 +69,9 @@ def load_circuit_data():
 
     return circuits
 
-def list_files_in_dataverse_dataset(doi: str):
+def list_files_in_dataverse_dataset(url):
     """Get a list of all files in a Dataverse dataset given a DOI."""
-    base_url = "https://dataverse.harvard.edu/api/datasets/:persistentId"
-    params = {"persistentId": f"doi:{doi}"}
-    response = requests.get(f"{base_url}/versions/latest/files", params=params)
+    response = requests.get(f"{url}/versions/latest/files")
 
     if response.status_code != 200:
         raise Exception(f"Could not access dataset: {response.status_code}")
