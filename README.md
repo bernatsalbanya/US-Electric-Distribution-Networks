@@ -25,12 +25,12 @@ dataset-prep-project/
 ### 1️⃣ Clone the Repository
 ```bash
 git clone  https://github.com/bernatsalbanya/US-Electric-Distribution-Networks.git
-cd dataset-prep-project
+cd US-Electric-Distribution-Networks
 ```
 
 ### 2️⃣ Create a Virtual Environment (Optional but Recommended)
 ```bash
-conda create --name dataset-prep python=3.9
+conda create --name US-Electric-Distribution-Networks python=3.9
 conda activate dataset-prep
 ```
 
