@@ -99,7 +99,7 @@ def plot_circuit_rating_distribution(datasets, output_dir="output/plots"):
     print(f"Histogram plots saved to {pdf_path}")
 
 
-def plot_utility_lines(datasets, output_dir="output/plots", color_map=None, linewidth=0.1, alpha=0.1, figsize=(10, 5), title='US Northeast'):
+def plot_utility_lines(datasets, output_dir="output/plots", color_map=None, linewidth=0.25, alpha=0.1, figsize=(10, 5), title='US Northeast'):
     """
     Plots utility line datasets on a single matplotlib axis.
 
@@ -149,7 +149,7 @@ def plot_utility_lines(datasets, output_dir="output/plots", color_map=None, line
     print(f"Plots utility line datasets saved to {pdf_path}")
 
 
-def plot_merged_utility_lines(dataset, output_dir="output/plots", color='#4472C4', linewidth=0.1, alpha=0.1, figsize=(10, 5), title='US Northeast'):
+def plot_merged_utility_lines(dataset, output_dir="output/plots", color='#4472C4', linewidth=0.25, alpha=0.1, figsize=(10, 5), title='US Northeast'):
     """
     Plots a single merged utility line dataset on a matplotlib axis and saves it as a PDF.
 
