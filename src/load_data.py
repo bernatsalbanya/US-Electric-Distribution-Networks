@@ -76,10 +76,7 @@ def extract_doi_from_url(url):
         raise ValueError("DOI not found in URL")
     return match.group(0)
 
-def list_files_in_dataverse_dataset(url):
-    """List all files in a Dataverse dataset given its HTML page URL."""
-    doi = extract_doi_from_url(url)
-    api_url = f"https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId={doi}"
+def list_files_in_dataverse_dataset(api_url):
     response = requests.get(api_url)
     if response.status_code != 200:
         raise Exception(f"Could not access dataset: {response.status_code}")
