@@ -61,7 +61,7 @@ data_paths:
 ### 1️⃣ Run the Main Processing Script
 ```bash
 cd scripts
-python main.py -h
+python main.py -h      # To check available options
 ```
 
 or:
