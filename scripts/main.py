@@ -34,9 +34,6 @@ if __name__ == "__main__":
     download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:10.7910/DVN/HSHLLT", output_dir = "data/circuits") # Download Circuit Data from Dataverse
     download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:10.7910/DVN/8Z4JRD", output_dir = "data/cleaned") # Download Cleaned Data from Dataverse
     download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:10.7910/DVN/PPL4JZ", output_dir = "results/ResultsNortheast") # Download Results Data from Dataverse
-
-    unzip_file("data/cleaned/cleaned.zip", "data/cleaned/")
-    unzip_file("results/ResultsNortheast/ResultsNortheast.zip", "results/ResultsNortheast/")
     print("Datasets downloaded.")
 
     REPROCESS_DATA = config["preprocess"]
