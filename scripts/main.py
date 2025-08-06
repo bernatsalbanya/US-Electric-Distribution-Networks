@@ -30,10 +30,10 @@ config = vars(args)
 if __name__ == "__main__":
   if args.download:
     print("Downloading datasets...")
-    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:10.7910/DVN/XZBDDR", output_dir = "data/census_tracts") # Download Census Tract Data from Dataverse
-    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:10.7910/DVN/HSHLLT", output_dir = "data/circuits") # Download Circuit Data from Dataverse
-    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:10.7910/DVN/8Z4JRD", output_dir = "data/cleaned") # Download Cleaned Data from Dataverse
-    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId=doi:10.7910/DVN/PPL4JZ", output_dir = "results/ResultsNortheast") # Download Results Data from Dataverse
+    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/:latest/files?persistentId=doi:10.7910/DVN/XZBDDR", output_dir = "data/census_tracts") # Download Census Tract Data from Dataverse
+    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/:latest/files?persistentId=doi:10.7910/DVN/HSHLLT", output_dir = "data/circuits") # Download Circuit Data from Dataverse
+    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/:latest/files?persistentId=doi:10.7910/DVN/8Z4JRD", output_dir = "data/cleaned") # Download Cleaned Data from Dataverse
+    download_all_files_from_dataverse(dataset_url="https://dataverse.harvard.edu/api/datasets/:persistentId/versions/:latest/files?persistentId=doi:10.7910/DVN/PPL4JZ", output_dir = "results/ResultsNortheast") # Download Results Data from Dataverse
     print("Datasets downloaded.")
 
     REPROCESS_DATA = config["preprocess"]
