@@ -24,7 +24,7 @@ dataset-prep-project/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/dataset-prep-project.git
+git clone  https://github.com/bernatsalbanya/US-Electric-Distribution-Networks.git
 cd dataset-prep-project
 ```
 
