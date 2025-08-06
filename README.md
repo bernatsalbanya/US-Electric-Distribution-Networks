@@ -6,7 +6,7 @@ This project is designed to **process, clean, and analyze circuit datasets** for
 ## 📂 Project Structure
 
 ```
-dataset-prep-project/
+US-Electric-Distribution-Networks/
 │── data/               # Store raw (or small sample) datasets
 │── notebooks/          # Jupyter notebooks for exploration (if applicable)
 │── scripts/            # Python scripts for data processing
