@@ -14,7 +14,6 @@ US-Electric-Distribution-Networks/
 │── tests/              # Unit tests for functions
 │── requirements.txt    # List of dependencies
 │── README.md           # Project overview and instructions
-│── LICENSE             # Open-source license (if applicable)
 │── setup.py            # Packaging the project
 │── config.yaml         # Configuration file for parameters
 │── Makefile            # Commands for easy execution (optional)
@@ -31,7 +30,7 @@ cd US-Electric-Distribution-Networks
 ### 2️⃣ Create a Virtual Environment (Optional but Recommended)
 ```bash
 conda create --name US-Electric-Distribution-Networks python=3.10
-conda activate dataset-prep
+conda activate US-Electric-Distribution-Networks
 ```
 
 ### 3️⃣ Install Dependencies
@@ -61,15 +60,18 @@ data_paths:
 
 ### 1️⃣ Run the Main Processing Script
 ```bash
-python main.py
+cd scripts
+python main.py -h
 ```
 
-### 2️⃣ Run Unit Tests
+or:
 ```bash
-pytest tests/
+python main.py -p -d   # Download Raw Data AND Preprocess AND Analyze Cleaned Data
+python main.py -p      # Preprocess Raw AND Analyze Cleaned Data
+python main.py         # Analyze Cleaned Data only 
 ```
 
-### 3️⃣ Reformat Code (Optional)
+### 2️⃣ Reformat Code (Optional)
 If using `black` for code formatting:
 ```bash
 black .
