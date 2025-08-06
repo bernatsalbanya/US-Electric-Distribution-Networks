@@ -30,7 +30,7 @@ cd US-Electric-Distribution-Networks
 
 ### 2️⃣ Create a Virtual Environment (Optional but Recommended)
 ```bash
-conda create --name US-Electric-Distribution-Networks python=3.9
+conda create --name US-Electric-Distribution-Networks python=3.10
 conda activate dataset-prep
 ```
 
