@@ -35,6 +35,12 @@ conda activate US-Electric-Distribution-Networks
 
 ### 3️⃣ Install Dependencies
 ```bash
+python setup.py build
+python setup.py install
+```
+
+or if using pip:
+```bash
 pip install -r requirements.txt
 ```
 
