@@ -70,23 +70,19 @@ def load_circuit_data():
 
     return circuits
 
-def extract_doi_from_url(url: str) -> str:
-    """Extract DOI from a Dataverse dataset URL."""
+def extract_doi_from_url(url):
     match = re.search(r"doi:10\.\d{4,9}/[-._;()/:A-Z0-9]+", url, re.IGNORECASE)
     if not match:
-        raise ValueError("DOI not found in the provided URL.")
+        raise ValueError("DOI not found in URL")
     return match.group(0)
 
-def list_files_in_dataverse_dataset(dataset_url: str):
+def list_files_in_dataverse_dataset(url):
     """List all files in a Dataverse dataset given its HTML page URL."""
-    doi = extract_doi_from_url(dataset_url)
-    api_url = "https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files"
-    params = {"persistentId": doi}
-    response = requests.get(api_url, params=params)
-
+    doi = extract_doi_from_url(url)
+    api_url = f"https://dataverse.harvard.edu/api/datasets/:persistentId/versions/latest/files?persistentId={doi}"
+    response = requests.get(api_url)
     if response.status_code != 200:
         raise Exception(f"Could not access dataset: {response.status_code}")
-
     return response.json()["data"]
 
 def download_all_files_from_dataverse(dataset_url: str, output_dir: str = "data/raw"):
