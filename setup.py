@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="dataset_prep_project",  # Package name
+    name="US-Electric-Distribution-Networks",  # Package name
     version="0.1.0",  # Version number
     #authors="Bernat Salbanya, Jordi Nin and Ramon Gras",  # Authors
     #correspondent_author="bernat.salbanya@esade.edu",
     description="A Python package for preparing datasets for US Electric Distribution Networks analysis.",
     long_description=open("README.md").read(),  # Use the README as a long description
     long_description_content_type="text/markdown",
-    url="https://github.com/bernatsalbanya/dataset-prep-project",  # Change to your repository URL
+    url="https://github.com/bernatsalbanya/US-Electric-Distribution-Networks",  # Change to your repository URL
     packages=find_packages(where="src"),  # Include all packages in the 'src' directory
     package_dir={"": "src"},  # Define the package root directory
     install_requires=[
